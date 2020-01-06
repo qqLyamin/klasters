@@ -33,8 +33,8 @@ public:
 
 		double minDistance = 0;
 		int minIndex = 0;
-		for (uint32_t i = 0; i < p.points.size(); ++i) { // для всех пришедших точек
-			for (uint32_t j = 0; j < points.size(); ++j) { // определяю к какому из данных центров текущая точка ближе
+		for (uint32_t i = 0; i < p.points.size(); ++i) { // for all points
+			for (uint32_t j = 0; j < points.size(); ++j) { // i wanna see a distance to all center-point's
 
 				if (minDistance == 0 && j == 0) {
 					minDistance = getDistance(p.points[i], points[j]); 
@@ -48,8 +48,7 @@ public:
 				}
 			}
 	
-			//ПРОБЛЕМКА С ИНИЦИАЛИЗАЦИЕЙ РЕТ ЛИСТА
-			for (auto & kl : retList) { // в листе который пойдет в ретурн я в кластер с соответствующим центром докидываю теперь принадлежащую ему точку
+			for (auto & kl : retList) { // now im setting point to a klaster with the right center-point
 				if (kl.center == points[minIndex]) {
 					kl.k_points.push_back(p.points[i]);
 				}

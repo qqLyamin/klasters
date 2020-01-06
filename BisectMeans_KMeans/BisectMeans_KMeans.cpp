@@ -12,30 +12,31 @@
 
 int main()
 {
-	//n-мерное пространство
+	//n - space
 	uint16_t n = 2; 
 
-	//std::cout << "input n" << std::endl;
-	//std::cin >> n;
+	std::cout << "input n" << std::endl;
+	std::cin >> n;
 
-	//pointsCounter-число точек
+	//pointsCounter
 	uint32_t pointsCounter = 10;
 	
-	//std::cout << "input pointsCounter" << std::endl;
-	//std::cin >> pointsCounter;
+	std::cout << "input pointsCounter" << std::endl;
+	std::cin >> pointsCounter;
 
-	//создадим контейнер для всех наших точек, генерируя их рандомно
+	//container for all random-points
 	pointsKeeper points = pointsKeeper(n, pointsCounter);
 
-	//пока без BisectMeans зададим количество кластеров руками
+	//count of clasters by hands
 	uint32_t K = 3;
 
-	/*std::cout << "input Klasters count K <= pointsCounter" << std::endl;
-	std::cin >> K;*/
+	std::cout << "input Klasters count K <= pointsCounter" << std::endl;
+	std::cin >> K;
 	if (K > pointsCounter) K = pointsCounter;
 
-	//теперь у меня есть множество точек в n-мерном пространстве
-	//а также множество точек, которые я называю центрами кластеров
+	//i got a lot of points
+	//and a lot of centers
+	//so i wanna make my klasters
 	pointsKeeper Kpoints = pointsKeeper(n, K);
 
 	std::list<klaster> kList = Kpoints.getKlasters(points);

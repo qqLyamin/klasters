@@ -1,6 +1,5 @@
 #pragma once
 //global
-#include <ctime> // содержит time()
 #include <random>
 
 struct point
