@@ -21,5 +21,8 @@ struct point
 	bool operator==(const point & right) {
 		return (n == right.n && v == right.v);
 	};
+	bool operator!=(const point & right) {
+		return (n != right.n || v != right.v);
+	};
 };
 

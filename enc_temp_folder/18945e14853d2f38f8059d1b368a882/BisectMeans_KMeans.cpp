@@ -69,7 +69,6 @@ int main()
 		}
 	}
 
-	//review centers and all points while we got changings
 	while (true) {
 
 		bool isChanged = false;

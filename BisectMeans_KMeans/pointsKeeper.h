@@ -4,16 +4,17 @@
 #include "klaster.h"
 
 double getDistance(const point & X, const point & Y) {
-	int distance = 0;
+	double distance = 0;
 	for (uint16_t tmp = 0; tmp < X.n; ++tmp) {
 		distance += pow(abs(static_cast<int>((X.v[tmp] - Y.v[tmp]))), 2);
 	}
 	return static_cast<double>(sqrt(distance));
 };
 
-class pointsKeeper {
+struct pointsKeeper {
 
 	std::vector<point> points;
+	bool changed = false;
 
 public:
 	pointsKeeper(uint16_t n, uint32_t pointsCounter) {
@@ -59,5 +60,9 @@ public:
 		}
 
 		return retList;
+	};
+
+	bool isChanged() {
+		return changed;
 	};
 };
