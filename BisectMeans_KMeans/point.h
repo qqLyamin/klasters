@@ -7,7 +7,7 @@ struct point
 	uint16_t n;
 	std::vector<uint32_t> v{};
 
-	point() : n(0) {};
+	point() {};
 	point(uint16_t n) : n(n) {
 		std::mt19937_64 random_generator;
 		uint32_t seed = std::random_device{}();

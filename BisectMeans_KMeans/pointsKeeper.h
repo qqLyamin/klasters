@@ -14,7 +14,6 @@ double getDistance(const point & X, const point & Y) {
 struct pointsKeeper {
 
 	std::vector<point> points;
-	bool changed = false;
 
 public:
 	pointsKeeper(uint16_t n, uint32_t pointsCounter) {
@@ -52,6 +51,7 @@ public:
 			for (auto & kl : retList) { // now im setting point to a klaster with the right center-point
 				if (kl.center == points[minIndex]) {
 					kl.k_points.push_back(p.points[i]);
+					break;
 				}
 			}
 
@@ -60,9 +60,5 @@ public:
 		}
 
 		return retList;
-	};
-
-	bool isChanged() {
-		return changed;
 	};
 };
