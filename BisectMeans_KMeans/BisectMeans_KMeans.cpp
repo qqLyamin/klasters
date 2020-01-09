@@ -15,7 +15,6 @@ int main()
 {
 	//n - space
 	const uint16_t n = 22;
-
 	uint32_t pointsCounter = 20000;
 
 	//container for all random-points
@@ -27,12 +26,10 @@ int main()
 
 	//i got a lot of points
 	//and a lot of centers
-	//so i wanna make my klasters
-	
+	//so i wanna make my klasters	
 	std::list<klaster> kList = Kpoints.getKlasters(points);
 
-	//int i = 0, j = 0;
-	uint64_t iterCounter = 0;
+	uint16_t iterCounter = 0;
 	bool isChanged = true;
 	while (isChanged)
 	{	
@@ -42,9 +39,9 @@ int main()
 			std::vector<std::vector<uint32_t>> med(n);
 			for (auto & v : med) {
 				v.reserve(kl.k_points.size());
-			}
-			for (auto & point : kl.k_points) { //there at the all points
-				for (auto & index : point.v) { //and there at the all coordinates
+			
+			for (auto & point : kl.k_points) { //at the all points
+				for (auto & index : point.v) { //and at the all coordinates
 					med[i].push_back(index);
 					++i;
 				}
