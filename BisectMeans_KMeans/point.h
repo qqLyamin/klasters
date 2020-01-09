@@ -14,7 +14,7 @@ struct point
 		random_generator.seed(seed);
 		v.reserve(n);
 		for (uint16_t index = 0; index < n; ++index) {
-			v.push_back(random_generator() % 10);
+			v.push_back(random_generator() % 10); // I was planning something different (not 100 - MAX_INT(or something))
 		}
 	};
 

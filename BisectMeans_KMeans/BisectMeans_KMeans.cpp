@@ -16,25 +16,23 @@ int main()
 	//n - space
 	const uint16_t n = 22;
 
-	//pointsCounter
 	uint32_t pointsCounter = 20000;
-
-	//std::cout << "input pointsCounter" << std::endl;
-	//std::cin >> pointsCounter;
 
 	//container for all random-points
 	pointsKeeper points = pointsKeeper(n, pointsCounter);
 
 	//count of clasters 
 	const uint32_t K = 15;
+	pointsKeeper Kpoints = pointsKeeper(n, K);
 
 	//i got a lot of points
 	//and a lot of centers
 	//so i wanna make my klasters
-	pointsKeeper Kpoints = pointsKeeper(n, K);
+	
 	std::list<klaster> kList = Kpoints.getKlasters(points);
 
 	//int i = 0, j = 0;
+	uint64_t iterCounter = 0;
 	bool isChanged = true;
 	while (isChanged)
 	{	
@@ -52,7 +50,8 @@ int main()
 				}
 				i = 0;
 			}
-			//std::thread th; 
+
+			//medians coz I'm worried about type overflow when summing coordinates
 			bool isZero = false;
 			point newCenter = point();
 			newCenter.n = n;
@@ -78,7 +77,10 @@ int main()
 		if (isChanged) {
 			kList = Kpoints.getKlasters(points);
 		}
+
+		++iterCounter;
 	}
 
-	stop
+	std::cout << iterCounter << std::endl;
+	int asdasd = 9302;
 }

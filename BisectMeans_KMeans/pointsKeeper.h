@@ -8,7 +8,7 @@ double getDistance(const point & X, const point & Y) {
 	for (uint16_t tmp = 0; tmp < X.n; ++tmp) {
 		distance += pow(abs(static_cast<int>((X.v[tmp] - Y.v[tmp]))), 2);
 	}
-	return static_cast<double>(sqrt(distance));
+	return static_cast<double>(sqrt(distance)); //probably i can return without sqrt 
 };
 
 struct pointsKeeper {
@@ -17,9 +17,9 @@ struct pointsKeeper {
 
 public:
 	pointsKeeper(uint16_t n, uint32_t pointsCounter) {
+		points.reserve(pointsCounter);
 		for (uint16_t index = 0; index < pointsCounter; ++index) {
-			point tmp = point(n);
-			points.push_back(tmp);
+			points.emplace_back(point(n));
 		}
 	};
 
