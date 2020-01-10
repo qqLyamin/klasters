@@ -76,11 +76,10 @@ int main()
 			if (isChanged) {
 				kList = Kpoints.getKlasters(points);
 			}
-
-			++iterCounter;
 		}
-
-		std::cout << iterCounter << std::endl;
-		int asdasd = 9302;
+		++iterCounter;
 	}
+
+	std::cout << iterCounter << std::endl;
+	int asdasd = 9302;
 }
